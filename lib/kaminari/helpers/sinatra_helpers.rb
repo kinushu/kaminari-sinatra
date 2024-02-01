@@ -93,7 +93,7 @@ module Kaminari::Helpers
 
         template = ActionViewTemplateProxy.new current_params: current_params, current_path: current_path, param_name: options[:param_name] || Kaminari.config.param_name
 
-        super scope, {template: template}.merge(options)
+        super scope, **{template: template}.merge(options)
       end
     end
     Kaminari::Helpers::HelperMethods.prepend SinatraHelperMethods
