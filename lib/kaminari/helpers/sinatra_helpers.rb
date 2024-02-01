@@ -27,7 +27,7 @@ module Kaminari::Helpers
     # with pure ERB.
     class ActionViewTemplateProxy < ActionView::Base
       def initialize(current_path: nil, param_name: nil, current_params: nil)
-        super()
+        super(ActionView::LookupContext.new(nil), {}, nil)
 
         @current_path = current_path
         @param_name = param_name || Kaminari.config.page_method_name
